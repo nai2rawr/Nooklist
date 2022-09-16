@@ -1,0 +1,35 @@
+{% extends 'nooklist/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class ='container'>
+    <div class ='row'>
+        <div class ='col'>
+            <h3>Conversations</h3>
+        </div>
+    </div>
+<div class='row'>
+    <div class ='col'>
+        <form method='GET' action='{% url "create-thread"%}'>
+        
+            <button class='btn' type='submit'>Start Chat </button>
+        </form>
+    </div>
+</div>
+
+{% for thread in threads.all %}
+
+<div class = 'row2'>
+    <div class = 'col2'>
+        <h5><i class='far'></i>@{{ thread.receiver}}</h5>
+
+        <a class ='streched-link' href='{% url "thread" thread.pl %}'></a>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+
+{%endblock%}

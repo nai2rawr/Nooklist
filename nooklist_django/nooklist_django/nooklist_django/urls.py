@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django import django_messages
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('', include('nooklist.urls')),
+    path('messages/', include('django_messages.urls')),
 ]

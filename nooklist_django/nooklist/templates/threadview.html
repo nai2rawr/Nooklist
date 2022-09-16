@@ -1,0 +1,56 @@
+{% extends 'nooklist/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class='container'>
+    <div class='row'>
+        <div class='card'>
+            <h5>@{{ thread.receiver}}</h5>
+        </div>
+    </div>
+    {% if message_list.all.count == 0%}
+
+    <div class='row2'>
+        <div class ='col'>
+            <p class='empty-text'>No Messages!</p>
+        </div>
+    </div>
+    {% endif %}
+
+    {% for messages in message_list %}
+
+    <div class='row4'>
+        <div class='col2'>
+            {% if message.sender_user == request.user %}
+            <div class ='sent-message'>
+                <p>{{ message.body }}</p>
+            </div>
+
+            {% elif message.receiver_user == request.user%}
+            <div class='received-messaage'>
+                <p>{{ message.body }}</p>
+            </div>
+             {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+
+    <div class='row4'>
+        <div class='col3'>
+            <form method='POST' action='{% url "create-message" thread.pk %}' enctype="multipart/form-data">
+            
+                {% csrf_token %}
+
+                {{form | crispy }}
+
+                <div class='d-grip'>
+                    <button class='btn' type='submit'>Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}

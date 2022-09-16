@@ -1,7 +1,10 @@
 from django.urls import path
 from . import views
+from django.views.generic import TemplateView
+#from django import django_messages
 
 urlpatterns = [
+
     path('houseware-list/', views.houseware_list, name='houseware-list'),
     path('recipes-list/', views.recipes_list, name='recipes-list')
     path('clothing-list/', views.clothing_list, name='clothing-list'),
@@ -22,6 +25,10 @@ urlpatterns = [
     path('clothing/<int:pk>/delete', views.clothing_delete, name='clothing_delete'),
     path('resources/<int:pk>/delete',views.resources_delete, name='resources_delete'),
     path('recipes/<int:pk>/delete',views.recipes_delete, name='recipes_delete'),
+    path('inbox/', ListThreads.as_view(), name='inbox'),
+    path('inbox/create-thread', CreateThread.as_view(), name='create-thread'),
+    path('inbox/<int:pk/>', ThreadView.as_view(), name='thread'),
+    path('inbox/<int:pk>/create-message/', CreateMessage.as_view(), name='create-message')
 
 
 ]

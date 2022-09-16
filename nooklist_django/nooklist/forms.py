@@ -30,3 +30,18 @@ class VillagerForm(forms.ModelForm):
     class Meta:
         model = Villager
         fields =('name', 'descripition', 'bid price', 'photo',)
+
+class ThreadForm(forms.Form):
+
+    username = forms.CharField(label ='', max_length=100)
+
+class MessageForm(forms.ModelForm):
+
+    body = forms.CharField(label='', max_length=1000)
+
+    image = forms.ImageField(label='Send an image', required=False)
+
+    class Meta:
+        model = MessageModel
+
+        fields = ('body', 'image')

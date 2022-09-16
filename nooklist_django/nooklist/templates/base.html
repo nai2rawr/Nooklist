@@ -9,7 +9,7 @@
     <link rel='stylesheet' href='{ static "css/nooklist.css "}'/>
 </head>
 <body>
-<h1>NookList 🍃</h1>    
+<h1 id='title'>NookList 🍃</h1>    
 <nav>
     <a href='/'>Home</a>
     <a href='/Housewares'>Houseware</a>
@@ -17,6 +17,7 @@
     <a href='/Clothing'>Clothing</a>
     <a href='/Villagers'>Villagers</a>
     <a href='/Resources'>Resources</a>
+    <a href="{% url 'inbox' %}" class="inbox-icon"><i class="far fa-paper-plane"></i></a>
 </nav>
 {% block content %} {%endblock%}
 </body>

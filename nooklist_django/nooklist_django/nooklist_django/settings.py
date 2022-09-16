@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'nooklist',
     'api',
     'rest_framework',
+    'django_messages',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +73,11 @@ TEMPLATES = [
     },
 ]
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django_messages.context_processors.inbox',
+)
+
+
 WSGI_APPLICATION = 'nooklist_django.wsgi.application'
 
 
@@ -94,6 +102,9 @@ REST_FRAMEWORK = {
         'nooklist.authentication.JWTAuthentication',
     ],
 }
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 
 
