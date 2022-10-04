@@ -1,0 +1,33 @@
+{% extends 'nooklist/base.html' %}
+
+{%block content%}
+<div class ='container'>
+    <div class='containercenter'>
+        <br>
+        <h2>Search for Houseware!</h2>
+        <br>
+        <form method="GET">
+            <input type='text' name='name' placeholder='Search'>
+            <button type='submit'>Search</button>
+        </form>
+    </div>
+    <br><br>
+    <div class ='drow'>
+        {%for houseware in all_houseware%}
+        <div class = 'div2'>
+            <div class ='card'>
+                <img src='{{ houseware.photo }}'>
+                <div class='card-body'>
+                    <p class='title'>{{houseware.name}}</p>
+                    <p class='card-descrip'>
+                        {{houseware.description}} {{houseware.bid_price}}
+                    </p>
+                    <a href='/houseware{{houseware.id}}/'></a>
+                </div>
+            </div>
+        </div>
+{%endfor%}
+    </div>
+</div>
+
+{%endblock%}

@@ -4,7 +4,7 @@ from django.db import models
 class Houseware(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
-    bid price = models.CharField(max_length=250)
+    bid_price = models.CharField(max_length=250)
     photo = models.CharField(max_length=500)
 
     def __str__(self):
@@ -13,7 +13,7 @@ class Houseware(models.Model):
 class Recipes(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
-    bid price = models.CharField(max_length=250)
+    bid_price = models.CharField(max_length=250)
     photo = models.CharField(max_length=500)
 
         def __str__(self):
@@ -23,7 +23,7 @@ class Recipes(models.Model):
 class Clothing(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
-    bid price = models.CharField(max_length=250)
+    bid_price = models.CharField(max_length=250)
     photo = models.CharField(max_length=500)
 
     def __str__(self):
@@ -33,7 +33,7 @@ class Clothing(models.Model):
 class Villager(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
-    bid price = models.CharField(max_length=250)
+    bid_price = models.CharField(max_length=250)
     photo = models.CharField(max_length=500)
 
     def __str__(self):
@@ -43,7 +43,7 @@ class Villager(models.Model):
 class Resources(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
-    bid price = models.CharField(max_length=250)
+    bid_price = models.CharField(max_length=250)
     photo = models.CharField(max_length=500)
 
     def __str__(self):

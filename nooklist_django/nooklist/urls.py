@@ -1,10 +1,14 @@
 from django.urls import path
 from . import views
+fro, rest_framework.routers import DefaultRouter
 from django.views.generic import TemplateView
+
+router.register(r'villagers',views.VillagerViewSet, r'recipes', views.RecipesViewSet, r'resources', views.ResourcesViewSet, r'houseware', views.HousewareViewSet, r'clothing', views.ClothingiewSet)
 #from django import django_messages
 
 urlpatterns = [
-
+    path('',include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
     path('houseware-list/', views.houseware_list, name='houseware-list'),
     path('recipes-list/', views.recipes_list, name='recipes-list')
     path('clothing-list/', views.clothing_list, name='clothing-list'),
